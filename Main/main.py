@@ -1,27 +1,31 @@
-from csv import QUOTE_ALL
-from PyQt6.QtWidgets import QApplication, QWidget
+from PyQt6.QtWidgets import QApplication, QWidget, QLabel
 import sys
 from PyQt6 import uic
+import pathlib
 
 
+path = pathlib.Path(__file__).parent.resolve()
 
+
+#* create main class for the app UI
 class UI(QWidget):
     def __init__(self):
         super().__init__()
+        uic.loadUi(f'{path}/YTDWindowUI.ui',self)
 
 
-        uic.loadUi('YTDWindowUI.ui',self)
 
 
-# Our app
+
+#* Our app
 app = QApplication(sys.argv)
-# Our app window and visibile
+#* Our app window and visibile
 window = UI()
-window.show
+window.show()
 
 
 
 
 
-# app execution
-app.exec()
+#* app execution
+sys.exit(app.exec())
