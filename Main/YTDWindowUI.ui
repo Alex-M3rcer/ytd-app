@@ -254,31 +254,6 @@ color: rgb(0, 0, 0);</string>
     </size>
    </property>
   </widget>
-  <widget class="QRadioButton" name="EnableProxyRadio">
-   <property name="geometry">
-    <rect>
-     <x>780</x>
-     <y>240</y>
-     <width>211</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Trekker</family>
-     <pointsize>15</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(0, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Enable Proxy</string>
-   </property>
-   <property name="autoExclusive">
-    <bool>false</bool>
-   </property>
-  </widget>
   <widget class="QLabel" name="VideoThumbnail">
    <property name="geometry">
     <rect>
@@ -663,7 +638,6 @@ p, li { white-space: pre-wrap; }
   <zorder>LinkLabel</zorder>
   <zorder>VideoLink</zorder>
   <zorder>FindBtn</zorder>
-  <zorder>EnableProxyRadio</zorder>
   <zorder>VideoThumbnail</zorder>
   <zorder>VideoTitleText</zorder>
   <zorder>LinkLabel_2</zorder>
@@ -681,7 +655,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>VideoQualitySelector</tabstop>
   <tabstop>DonateBtn</tabstop>
   <tabstop>VideoTitleText</tabstop>
-  <tabstop>EnableProxyRadio</tabstop>
   <tabstop>ReportBtn</tabstop>
   <tabstop>AudioQualitySelector</tabstop>
   <tabstop>FindBtn</tabstop>
