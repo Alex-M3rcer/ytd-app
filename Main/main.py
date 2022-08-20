@@ -191,17 +191,19 @@ class Ui_Form(object):
         self.VideoQualitySelector.addItem("")
         self.VideoQualitySelector.addItem("")
         self.VideoQualitySelector.addItem("")
-        self.AudioQualitySelector = QtWidgets.QComboBox(Form)
-        self.AudioQualitySelector.setEnabled(False)
-        self.AudioQualitySelector.setGeometry(QtCore.QRect(530, 240, 181, 51))
-        font = QtGui.QFont()
-        font.setPointSize(16)
-        self.AudioQualitySelector.setFont(font)
-        self.AudioQualitySelector.setStyleSheet("background-color:white;")
-        self.AudioQualitySelector.setIconSize(QtCore.QSize(30, 30))
-        self.AudioQualitySelector.setObjectName("AudioQualitySelector")
-        self.AudioQualitySelector.addItem("")
-        self.AudioQualitySelector.addItem("")
+
+        #self.AudioQualitySelector = QtWidgets.QComboBox(Form)
+        #self.AudioQualitySelector.setEnabled(False)
+        #self.AudioQualitySelector.setGeometry(QtCore.QRect(530, 240, 181, 51))
+        #font = QtGui.QFont()
+        #font.setPointSize(16)
+        #self.AudioQualitySelector.setFont(font)
+        #self.AudioQualitySelector.setStyleSheet("background-color:white;")
+        #self.AudioQualitySelector.setIconSize(QtCore.QSize(30, 30))
+        #self.AudioQualitySelector.setObjectName("AudioQualitySelector")
+        #self.AudioQualitySelector.addItem("")
+        #self.AudioQualitySelector.addItem("")
+        
         self.DownloadPath = QtWidgets.QLineEdit(Form)
         self.DownloadPath.setGeometry(QtCore.QRect(210, 555, 610, 41))
         font = QtGui.QFont()
@@ -261,7 +263,9 @@ class Ui_Form(object):
         self.textEdit.setFont(font)
         self.textEdit.setReadOnly(True)
         self.textEdit.setObjectName("textEdit")
-        self.AudioQualitySelector.raise_()
+
+        #self.AudioQualitySelector.raise_()
+
         self.line.raise_()
         self.label.raise_()
         self.DonateBtn.raise_()
@@ -289,9 +293,10 @@ class Ui_Form(object):
         Form.setTabOrder(self.VideoQualitySelector, self.DonateBtn)
         Form.setTabOrder(self.DonateBtn, self.VideoTitleText)
         Form.setTabOrder(self.VideoTitleText, self.ReportBtn)
-        Form.setTabOrder(self.ReportBtn, self.AudioQualitySelector)
-        Form.setTabOrder(self.AudioQualitySelector, self.FindBtn)
+
+        Form.setTabOrder(self.ReportBtn, self.FindBtn) #self.AudioQualitySelector  #self.AudioQualitySelector,
         Form.setTabOrder(self.FindBtn, self.DownloadPath)
+
         Form.setTabOrder(self.DownloadPath, self.BrowseBtn)
         Form.setTabOrder(self.BrowseBtn, self.DownloadBtn)
         Form.setTabOrder(self.DownloadBtn, self.textEdit)
@@ -326,9 +331,11 @@ class Ui_Form(object):
         self.VideoQualitySelector.setItemText(5, _translate("Form", "1080p"))
         self.VideoQualitySelector.setItemText(6, _translate("Form", "Highest Resolution"))
         self.VideoQualitySelector.setCurrentIndex(3)
-        self.AudioQualitySelector.setCurrentText(_translate("Form", "128kbps"))
-        self.AudioQualitySelector.setItemText(0, _translate("Form", "128kbps"))
-        self.AudioQualitySelector.setItemText(1, _translate("Form", "320kbps"))
+
+        #self.AudioQualitySelector.setCurrentText(_translate("Form", "128kbps"))
+        #self.AudioQualitySelector.setItemText(0, _translate("Form", "128kbps"))
+        #self.AudioQualitySelector.setItemText(1, _translate("Form", "320kbps"))
+
         self.DownloadPath.setPlaceholderText(_translate("Form", "Download Path"))
         self.LinkLabel_3.setText(_translate("Form", "Download Path:"))
         self.BrowseBtn.setText(_translate("Form", "Browse"))
@@ -365,10 +372,10 @@ class Ui_Form(object):
         else:
             self.VideoQualitySelector.setEnabled(False)
         # MP3 Selected i(1)
-        if selected_index or text =='MP3':
-            self.AudioQualitySelector.setEnabled(True)
-        else:
-            self.AudioQualitySelector.setEnabled(False)
+        #if selected_index or text =='MP3':
+        #    self.AudioQualitySelector.setEnabled(True)
+        #else:
+        #    self.AudioQualitySelector.setEnabled(False)
 
     # Find button clicked
     def find_btn_clicked(self):
@@ -434,24 +441,43 @@ class Ui_Form(object):
                 self.video_download()
             if format_type == 'MP3':
                 # TODO: V0.6.0 add Audio Download Function
+                self.audio_download()
                 pass
         else:
             # TODO: V0.9.0 Error handling
             pass
+    
+    # Get Link & Quality & Download Path
+    def get_info(self,format):
+        link = self.VideoLink.text()
+        download_path = self.DownloadPath.text()
+        if format == 'MP4':
+            quality = self.VideoQualitySelector.currentText()
+            return link,quality,download_path
+        elif format == 'MP3':
+            quality = None
+            return link,download_path
+            # TODO: find out a way to get different qualities
 
+        
+        
     # Video Download function
     def video_download(self):
-        # get the link
-        link = self.VideoLink.text()
-        # get the quality
-        quality = self.VideoQualitySelector.currentText()
-        # download path
-        download_path = self.DownloadPath.text()
+        link, quality, download_path = self.get_info(format = 'MP4')
 
         try:
             ytd.video_download(link,quality,download_path)
         except:
             # TODO: V0.9.0 Stream Error handling
+            pass
+    # Audio Download function
+    def audio_download(self):
+        link, download_path = self.get_info(format = 'MP3')
+        try:
+            print('this happened', link,download_path)
+            ytd.audio_download(link,download_path)
+        except:
+            # TODO: V0.9.0 Audio Stream Error handling
             pass
 
 if __name__ == "__main__":
