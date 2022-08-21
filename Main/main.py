@@ -49,7 +49,7 @@ class Ui_Form(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("image/YTD-Logo-Purple.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         Form.setWindowIcon(icon)
-        Form.setStyleSheet("background-color: rgb(24, 24, 24);")
+        Form.setStyleSheet("background-color: #191919;")
         self.line = QtWidgets.QFrame(Form)
         self.line.setGeometry(QtCore.QRect(-40, 120, 1081, 16))
         self.line.setFrameShape(QtWidgets.QFrame.Shape.HLine)
