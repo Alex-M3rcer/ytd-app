@@ -9,7 +9,7 @@ Youtube downloader app with User Interface
 # Releases
 
 
-*[YTD-APP V1.0.0](https://github.com/Alex-M3rcer/ytd-app/releases/tag/V1.0.0)
+* [YTD-APP V1.0.0](https://github.com/Alex-M3rcer/ytd-app/releases/tag/V1.0.0)
 
 
 # Report Bugs
