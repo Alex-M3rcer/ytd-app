@@ -6,6 +6,10 @@ Youtube downloader app with User Interface
 * you can download youtube videos in MP4 and MP3 formats
 
 
+# Releases
+
+
+*[YTD-APP V1.0.0](https://github.com/Alex-M3rcer/ytd-app/releases/tag/V1.0.0)
 
 
 # Report Bugs
