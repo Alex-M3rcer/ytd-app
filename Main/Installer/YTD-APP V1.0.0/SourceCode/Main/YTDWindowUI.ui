@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>6</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>YTD Downloader</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>image/YTD-Logo-Purple.png</normaloff>image/YTD-Logo-Purple.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(24, 24, 24);</string>
+  </property>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>-40</x>
+     <y>120</y>
+     <width>1081</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>15</y>
+     <width>100</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>image/YTD-Logo-Purple.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="DonateBtn">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>30</y>
+     <width>230</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Trekker</family>
+     <pointsize>28</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(80, 71, 128, 100);
+color:white;
+</string>
+   </property>
+   <property name="text">
+    <string>DONATE</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>image/bitcoin.png</normaloff>image/bitcoin.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ReportBtn">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>30</y>
+     <width>231</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Trekker</family>
+     <pointsize>25</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(80, 71, 128, 100);
+color:white;
+</string>
+   </property>
+   <property name="text">
+    <string>Report Bug</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>image/bug.png</normaloff>image/bug.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>35</y>
+     <width>231</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Trekker</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:white</string>
+   </property>
+   <property name="text">
+    <string>Youtube Downloader</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LinkLabel">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>150</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Trekker</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:white</string>
+   </property>
+   <property name="text">
+    <string>Link:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="VideoLink">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>190</y>
+     <width>691</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:white;</string>
+   </property>
+   <property name="placeholderText">
+    <string>Please enter your video link here....</string>
+   </property>
+   <property name="clearButtonEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="FindBtn">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>190</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Trekker</family>
+     <pointsize>30</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(74, 249, 255, 100);
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>FIND</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>image/search.png</normaloff>image/search.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="VideoThumbnail">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>310</y>
+     <width>320</width>
+     <height>240</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LinkLabel_2">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>300</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Trekker</family>
+     <pointsize>20</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:white</string>
+   </property>
+   <property name="text">
+    <string>Title:</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="VideoTitleText">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>340</y>
+     <width>581</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>32</pointsize>
+    </font>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="FormatSelector">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>240</y>
+     <width>181</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:white;</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="frame">
+    <bool>false</bool>
+   </property>
+   <item>
+    <property name="text">
+     <string>MP4 (Video)</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>image/mp4.png</normaloff>image/mp4.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>MP3 (Audio)</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>image/music-store-app.png</normaloff>image/music-store-app.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="VideoQualitySelector">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>240</y>
+     <width>181</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:white;</string>
+   </property>
+   <property name="currentText">
+    <string>144p</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="frame">
+    <bool>false</bool>
+   </property>
+   <item>
+    <property name="text">
+     <string>144p</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>240p</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>360p</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>480p</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>720p</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1080p</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Highest Resolution</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="AudioQualitySelector">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>240</y>
+     <width>181</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:white;</string>
+   </property>
+   <property name="currentText">
+    <string>MP4 (Video)</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <item>
+    <property name="text">
+     <string>MP4 (Video)</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>image/mp4.png</normaloff>image/mp4.png</iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>MP3 (Audio)</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>image/music-store-app.png</normaloff>image/music-store-app.png</iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="DownloadPath">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>555</y>
+     <width>581</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:white;</string>
+   </property>
+   <property name="placeholderText">
+    <string>Download Path</string>
+   </property>
+   <property name="clearButtonEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LinkLabel_3">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>560</y>
+     <width>221</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Trekker</family>
+     <pointsize>20</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:white</string>
+   </property>
+   <property name="text">
+    <string>Download Path:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="BrowseBtn">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>555</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Trekker</family>
+     <pointsize>25</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(120, 136, 191,100);
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>Browse</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>image/browse.png</normaloff>image/browse.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="DownloadBtn">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>610</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Trekker</family>
+     <pointsize>25</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(103, 178, 230, 90);
+color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>Download</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>image/direct-download.png</normaloff>image/direct-download.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>620</y>
+     <width>411</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:20pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#cbcbcb;&quot;&gt;This App Was made by &lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; color:#cbcbcb;&quot;&gt;Alex-M3rcer&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#cbcbcb;&quot;&gt;Contact Email: &lt;/span&gt;&lt;a href=&quot;mailto:alex-m3rcer@outlook.com&quot;&gt;&lt;span style=&quot; font-size:14pt; text-decoration: underline; color:#cbcbcb;&quot;&gt;alex-m3rcer@outlook.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <zorder>AudioQualitySelector</zorder>
+  <zorder>line</zorder>
+  <zorder>label</zorder>
+  <zorder>DonateBtn</zorder>
+  <zorder>ReportBtn</zorder>
+  <zorder>label_2</zorder>
+  <zorder>LinkLabel</zorder>
+  <zorder>VideoLink</zorder>
+  <zorder>FindBtn</zorder>
+  <zorder>VideoThumbnail</zorder>
+  <zorder>VideoTitleText</zorder>
+  <zorder>LinkLabel_2</zorder>
+  <zorder>FormatSelector</zorder>
+  <zorder>VideoQualitySelector</zorder>
+  <zorder>DownloadPath</zorder>
+  <zorder>LinkLabel_3</zorder>
+  <zorder>BrowseBtn</zorder>
+  <zorder>DownloadBtn</zorder>
+  <zorder>textEdit</zorder>
+ </widget>
+ <tabstops>
+  <tabstop>VideoLink</tabstop>
+  <tabstop>FormatSelector</tabstop>
+  <tabstop>VideoQualitySelector</tabstop>
+  <tabstop>DonateBtn</tabstop>
+  <tabstop>VideoTitleText</tabstop>
+  <tabstop>ReportBtn</tabstop>
+  <tabstop>AudioQualitySelector</tabstop>
+  <tabstop>FindBtn</tabstop>
+  <tabstop>DownloadPath</tabstop>
+  <tabstop>BrowseBtn</tabstop>
+  <tabstop>DownloadBtn</tabstop>
+  <tabstop>textEdit</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
